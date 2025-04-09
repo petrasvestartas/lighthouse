@@ -1,1 +1,1 @@
-/Users/petras/brg/2_code/lighthouse/target/debug/lighthouse: /Users/petras/brg/2_code/lighthouse/src/main.rs
+/home/petrasv/brg/code/lighthouse/target/debug/lighthouse: /home/petrasv/brg/code/lighthouse/src/lib.rs /home/petrasv/brg/code/lighthouse/src/main.rs
