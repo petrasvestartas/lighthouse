@@ -1,0 +1,37 @@
+# General
+.DS_Store
+Thumbs.db
+
+# Rust build artifacts
+/target/
+**/*.rs.bk
+
+# Cargo related
+/Cargo.lock
+/.cargo/
+
+# Editor-specific
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# WebAssembly build artifacts
+pkg/
+*.wasm
+*.js
+*.ts
+
+# By wasm-bindgen and related tools
+/lighthouse_bg.wasm
+/lighthouse.js
+/lighthouse.d.ts
+
+# Node-related (if using for bundling wasm)
+node_modules/
+npm-debug.log
+
+# Output or dev server files
+dist/
+build/
