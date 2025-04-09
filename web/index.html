@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lighthouse</title>
+  <style>
+    html, body { margin: 0; padding: 0; overflow: hidden; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <div id="wasm-example"></div>
+  <script type="module">
+    import init from "./pkg/lighthouse.js";
+    init().catch(console.error);
+  </script>
+</body>
+</html>

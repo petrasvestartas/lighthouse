@@ -20,14 +20,21 @@ pub fn run() {
     }
 
     let event_loop = EventLoop::new().unwrap();
-    let window = WindowBuilder::new().build(&event_loop).unwrap();
+    let window = WindowBuilder::new()
+    .with_title("Lighthouse")                    // Set window title
+    .with_inner_size(winit::dpi::LogicalSize::new(1200.0, 600.0)) // Set initial size
+    .with_resizable(true)                        // Allow resizing
+    .with_decorations(true)                      // Use standard OS window frame
+    .build(&event_loop)
+    .unwrap();
+
 
     #[cfg(target_arch = "wasm32")]
     {
         // Winit prevents sizing with CSS, so we have to set
         // the size manually when on web.
         use winit::dpi::PhysicalSize;
-        let _ = window.request_inner_size(PhysicalSize::new(450, 400));
+        let _ = window.request_inner_size(PhysicalSize::new(450, 1200));
 
         use winit::platform::web::WindowExtWebSys;
         web_sys::window()
