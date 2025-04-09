@@ -1,3 +1,6 @@
+#[cfg(target_arch = "wasm32")]
+use wasm_bindgen::prelude::*;
+
 use winit::{
     event::*,
     event_loop::EventLoop,
@@ -5,8 +8,7 @@ use winit::{
     window::WindowBuilder,
 };
 
-#[cfg(target_arch = "wasm32")]
-use wasm_bindgen::prelude::*;
+
 
 #[cfg_attr(target_arch = "wasm32", wasm_bindgen(start))]
 pub fn run() {
@@ -41,6 +43,7 @@ pub fn run() {
             .and_then(|win| win.document())
             .and_then(|doc| {
                 let dst = doc.get_element_by_id("wasm-example")?;
+                // let dst = doc.body()?;
                 let canvas = web_sys::Element::from(window.canvas()?);
                 dst.append_child(&canvas).ok()?;
                 Some(())

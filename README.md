@@ -22,6 +22,9 @@ wasm-bindgen target/wasm32-unknown-unknown/release/lighthouse.wasm \
 cd web
 python3 -m http.server
 http://localhost:8000
- 
 
+
+## Internet build
+wasm-pack build --target web
+npx serve .
  
